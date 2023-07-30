@@ -1,13 +1,12 @@
 <script setup>
 
-import { Link} from "@inertiajs/vue3";
 import NavLink from "@/Shared/NavLink.vue";
 
 </script>
 
 <template>
-    <nav class="mt-6">
-        <ul class="list-disc">
+    <nav>
+        <ul class="list-disc flex space-x-4 list-inside">
             <li>
                 <NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
             </li>
@@ -17,9 +16,7 @@ import NavLink from "@/Shared/NavLink.vue";
             <li>
                 <NavLink href="/settings" :active="$page.component === 'Settings'">Settings</NavLink>
             </li>
-            <li>
-                <Link href="/logout" method="post" as="button" class="text-blue-500 hover:underline">Log out</Link>
-            </li>
+
         </ul>
     </nav>
 </template>

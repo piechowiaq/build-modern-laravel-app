@@ -1,15 +1,13 @@
 <script setup>
 
-import Nav from "../Shared/Nav.vue"
+import Layout from "../Shared/Layout.vue"
 
 
 </script>
 <template>
 
-    <h1 class="4-xl font-bold">Home</h1>
-
-    <Nav></Nav>
-
-
+    <Layout>
+        <h1 class="text-3xl font-bold">Home</h1>
+    </Layout>
 
 </template>
