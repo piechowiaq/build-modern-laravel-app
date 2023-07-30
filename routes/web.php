@@ -23,8 +23,12 @@ Route::get('/users', function () {
     return Inertia::render('Users');
 });
 
-Route::get('/settings   ', function () {
+Route::get('/settings', function () {
     return Inertia::render('Settings');
+});
+
+Route::post('/logout', function () {
+     dd('logging the user out');
 });
 
 //Route::get('/', function () {
