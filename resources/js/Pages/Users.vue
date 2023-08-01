@@ -1,12 +1,10 @@
 <script setup>
 
-import Layout from "../Shared/Layout.vue"
 
 defineProps({
     time: String,
 });
 
-defineOptions({layout: Layout})
 
 
 
