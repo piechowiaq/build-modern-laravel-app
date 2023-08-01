@@ -6,7 +6,7 @@ import NavLink from "@/Shared/NavLink.vue";
 
 <template>
     <nav>
-        <ul class="list-disc flex space-x-4 list-inside">
+        <ul class="flex space-x-6">
             <li>
                 <NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
             </li>
@@ -20,7 +20,6 @@ import NavLink from "@/Shared/NavLink.vue";
         </ul>
     </nav>
 </template>
-
 
 
 <style scoped>
