@@ -1,18 +1,26 @@
 <script setup>
 
 import Pagination from "@/Shared/Pagination.vue";
+import { ref, watch } from "vue";
 
 defineProps({
     users: Object,
 });
 
+let search = ref('');
+
 </script>
 <template>
     <Head title="Users" />
+    <div class="flex justify-between mb-6">
+        <h1 class="text-3xl">
+            Users
+        </h1>
 
-    <h1 class="text-3xl mb-6">
-        Users
-    </h1>
+        <input v-model="search" type="text" placeholder="Search..." class="border px-2 rounded-lg">
+
+    </div>
+
 
     <div class="flex flex-col">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
