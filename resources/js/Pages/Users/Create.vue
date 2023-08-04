@@ -1,13 +1,18 @@
 <script setup>
 
 import { reactive } from "vue";
+import { router } from '@inertiajs/vue3'
 
 let form = reactive({
     name: '',
     email: '',
     password: '',
-})
+});
 
+let submit = () => {
+    router.post('/users', form);
+
+};
 </script>
 
 <template>
@@ -15,7 +20,7 @@ let form = reactive({
 
     <h1 class="text-3xl font-bold">Create New User</h1>
 
-    <form method="POST" action="/" class="max-w-md mx-auto mt-8">
+    <form @submit.prevent="submit" class="max-w-md mx-auto mt-8">
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name"> Name </label>
 
