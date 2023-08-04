@@ -30,7 +30,9 @@ let submit = () => {
                 type="text"
                 name="name"
                 id="name"
-                required />
+                />
+
+            <div v-if="$page.props.errors.name" v-text="$page.props.errors.name" class="text-red-500 text-xs mt-1"></div>
         </div>
 
         <div class="mb-6">
@@ -42,8 +44,10 @@ let submit = () => {
                 type="email"
                 name="email"
                 id="email"
-                required
+
             />
+
+            <div v-if="$page.props.errors.email" v-text="$page.props.errors.email" class="text-red-500 text-xs mt-1"></div>
         </div>
 
         <div class="mb-6">
@@ -55,9 +59,11 @@ let submit = () => {
                 type="password"
                 name="password"
                 id="password"
-                required
+
             />
+            <div v-if="$page.props.errors.password" v-text="$page.props.errors.password" class="text-red-500 text-xs mt-1"></div>
         </div>
+
 
         <div class="mb-6">
             <button type="submit" class="bg-indigo-500 text-white rounded py-2 px-4 hover:bg-indigo-600">Submit</button>
