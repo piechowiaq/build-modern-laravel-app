@@ -4,14 +4,18 @@ import Pagination from "@/Shared/Pagination.vue";
 import { ref, watch } from "vue";
 import { router } from "@inertiajs/vue3"
 
-defineProps({
+let props = defineProps({
     users: Object,
+    filters: Object
 });
 
-let search = ref('');
+let search = ref(props.filters.search);
 
 watch(search, value => {
-    router.get('/users', { search: value}, {preserveState: true})
+    router.get('/users', { search: value}, {
+        preserveState: true,
+        replace: true
+    })
 
 })
 

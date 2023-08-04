@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return Inertia::render('Users' , [
+    return Inertia::render('Users/Index' , [
         'users' => User::query()
             ->when(Request::input('search'), function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
@@ -33,8 +33,14 @@ Route::get('/users', function () {
             ->through(fn($user) =>[
             'id' => $user->id,
             'name'=> $user->name
-        ])
+        ]),
+
+        'filters' =>  Request::only(['search'])
     ]);
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('Users/Create');
 });
 
 Route::get('/settings', function () {
